@@ -437,28 +437,6 @@ export class TurtleClient {
 	}
 
 	/**
-	 * Get existing messages in a channel. Be careful, this switches your room.
-	 * @async
-	 * @returns {Promise} - An Axios request to the /worker/messages endpoint.
-	 * @see {@link http://axios-http.com Axios Documentation} for more information about Axios.
-	 */
-	async messages(room = this.#room) {
-		// @ts-ignore
-		var j = this.#socket.listenemit.bind(this.#socket)("join", room);
-		return await new Promise((res) => {
-			//@ts-ignore
-			this.#socket.listenon.bind(this.#socket)("join", () => {
-				//@ts-ignore
-				this.#socket.listenemit.bind(this.#socket)("info");
-				//@ts-ignore
-				this.#socket.listenon.bind(this.#socket)("info", (d) => {
-					res(d);
-				});
-			});
-		});
-	}
-
-	/**
 	 * Get detailed information about yourself, or less detailed information about others.
 	 * @param {string} [name=] - A user's name. Leave blank for yourself, or use a string for others.
 	 * @async
@@ -556,13 +534,13 @@ export class TurtleClient {
 	}
 
 	/**
-	 * Set your account's banner.
+	 * Set your account's banner. Requires Plus.
 	 * @param {string} name - The name of the banner.
 	 * @async
 	 * @returns {Promise} - An Axios request to the /worker/set endpoint.
 	 * @see {@link http://axios-http.com Axios Documentation} for more information about Axios.
 	 */
-	async banner(name: string) {
+	async setBanner(name: string) {
 		return (
 			await request.post(
 				this.#protocol + this.#instance + "/worker/set", {
@@ -584,7 +562,7 @@ export class TurtleClient {
 	 * @returns {Promise} - An Axios request to the /worker/set endpoint.
 	 * @see {@link http://axios-http.com Axios Documentation} for more information about Axios.
 	 */
-	async blook(name: string) {
+	async setBlook(name: string) {
 		return (
 			await request.post(
 				this.#protocol + this.#instance + "/worker/set", {
@@ -607,7 +585,7 @@ export class TurtleClient {
 	 * @returns {Promise} - An Axios request to the /worker/change endpoint.
 	 * @see {@link http://axios-http.com Axios Documentation} for more information about Axios.
 	 */
-	async username(name: string, password: string) {
+	async changeUsername(name: string, password: string) {
 		return (
 			await request.post(
 				this.#protocol + this.#instance + "/worker/change", {
@@ -623,7 +601,7 @@ export class TurtleClient {
 		).data;
 	}
 
-	async color(newColor: string) {
+	async changeColor(newColor: string) {
 		return (
 			await request.post(
 				this.#protocol + this.#instance + "/worker/change", {
@@ -646,7 +624,7 @@ export class TurtleClient {
 	 * @returns {Promise} - An Axios request to the /worker/change endpoint.
 	 * @see {@link http://axios-http.com Axios Documentation} for more information about Axios.
 	 */
-	async password(oldPassword: string, newPassword: string) {
+	async changePassword(oldPassword: string, newPassword: string) {
 		return (
 			await request.post(
 				this.#protocol + this.#instance + "/worker/change", {

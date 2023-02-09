@@ -60,7 +60,7 @@ class TurtleUtils {
      * @see {@link http://socket.io SocketIO Documentation} for more information about SocketIO.
      * @see {@link https://trtl.acaiberii.win/docs/ Trtl Documentation} for more information about Trtl.
      */
-    constructor(instance = "v2.blacket.org") {
+    constructor(instance = "blacket.org") {
         this.#instance = instance;
     }
     /**
@@ -95,7 +95,7 @@ class TurtleUtils {
     async login(username, password) {
         var cook;
         try {
-            var resp = await request_1.request.post("https://v2.blacket.org/worker/login", {
+            var resp = await request_1.request.post("https://blacket.org/worker/login", {
                 username: username,
                 password: password,
             }, {
@@ -105,7 +105,7 @@ class TurtleUtils {
             });
             cook = resp.headers
                 .get("set-cookie")[0]
-                .split("; ")[0]
+                .split(";")[0]
                 .replace("connect.sid=", "");
         }
         catch (e) {

@@ -1,67 +1,46 @@
-<h2>Now maintained by qaiik (12/20/22)</h2>
 <div align="center">
-    <img width="25%"
-        src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/turtle_1f422.png">
-    <h3>trtl</h3>
-    <h4>blacketv2 replacement for betastar.js</h4>
+	<br />
+	<p>
+		<img src="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f422.png" width="300" alt="trtl" /></a>
+	</p>
+    <h1><b>trtl</b></h1>
+	<p>
+		<a href="https://www.npmjs.com/package/trtl"><img src="https://img.shields.io/npm/v/trtl.svg?maxAge=3600" alt="trtl version" /></a>
+		<a href="https://www.npmjs.com/package/trtl-migrate"><img src="https://img.shields.io/npm/dt/trtl.svg?maxAge=3600" alt="trtl downloads" /></a>
+	</p>
 </div>
-<h1>Hello, and welcome to Trtl!</h1>
-<p>
-    Trtl was designed as an "updated" betastar.js - one that has even more functions, but still holds to the same true
-    purpose - chatbots and modification.
-    <br>
-    Trtl works with BlacketV2, not Betastar.
-</p>
-<h2>Comparison</h2>
-<h3>Betastar.js</h3>
-<table>
-    <tr>
-        <th>Feature/Issue</th>
-        <th>Fixed by Trtl?</th>
-    </tr>
-    <tr>
-        <td>No TypeScript/VSCode support built-in.</td>
-        <td>✅ Types are built-in.</td>
-    </tr>
-    <tr>
-        <td>Not well documented, and no documentation is provided (so you have to read thru the source)</td>
-        <td>✅ <a href="https://trtl.acaiberii.win/docs">Link</a> is available.</td>
-    </tr>
-    <tr>
-        <td>Sometimes slow, and only works for Betastar.</td>
-        <td>✅ Optimized and fixed already.</td>
-    </tr>
-    <tr>
-        <td>Multi-instance support?</td>
-        <td>✅ Though Betastar has no "instances" per-say, Blacket V2 will and Trtl has fixed this in advance.</td>
-    </tr>
-</table>
-<h3>Trtl-Main</h3>
-<table>
-    <tr>
-        <th>Feature/Issue</th>
-        <th>Fixed by Trtl-Migrate?</th>
-    </tr>
-    <tr>
-        <td>Incompatible with the original Betastar.js API.</td>
-        <td>✅ Fixed by Trtl-Migrate.</td>
-    </tr>
-    <tr>
-        <td>Very easy-to-use, and you dont have to scan through docs.</td>
-        <td>✅ API is the same as always!</td>
-    </tr>
-    <tr>
-        <td>"So all I have to do is change the session ID and my bots will work with Trtl-Migrate?</td>
-        <td>✅ Yes!</td>
-    </tr>
-</table>
-<h3>The best Trtl-based library is Trtl-Migrate. Credits to <a
-        href="https://github.com/VillainsRule4000">@VillainsRule4000</a>.</h3>
-<h2>Quick notice: For anyone wondering, this was NOT developed out of anger or grudge- I made this in order to allow
-    people to make bots, and express creative freedom in blacket-based projects they're making.</h2>
-<h3>Ready to code? View the <a href="https://trtl.acaiberii.win/docs">docs</a>.</h3>
-<h4>Thank you.</h4>
-<h5><a href="/LOVE.md">hi</a></h5>
-<a href="https://trtl.acaiberii.win/">trtl@acaiberii.win</a>
 
-<h1>As proven in Betastar, making bots with malicious purposes can result in a ban. Create wisely. Even boths that don't have malicious intent may sometimes be muted or banned. The creators of trtl are in no way responsible for what happens because of your bot.</h1>
+## About
+
+trtl is a superpowered version of [betastar.js](https://www.npmjs.com/package/betastar.js), for Blacket.
+
+- Object-oriented
+- Works with instances
+- Advanced documentation
+
+## Installation
+
+```sh-session
+npm install trtl-migrate
+yarn add trtl-migrate
+pnpm add trtl-migrate
+```
+
+### More packages
+
+- [trtl-migrate](https://www.npmjs.com/package/trtl-migrate) for a quick migration from betastarjs to trtl. (`npm install trtl-migrate`)
+- [axios](https://www.npmjs.com/package/axios) for easy requests to Blacket (`npm install axios`)
+- [fs](https://www.npmjs.com/package/fs) for simple db management (`npm install fs`)
+
+## Issues
+
+Before creating an issue, please ensure that it hasn't already been reported/suggested, and double-check the
+[documentation][documentation].  
+
+## Help
+
+If you don't understand something in the documentation, you are experiencing problems, or you just need a gentle
+nudge in the right direction, refer to the [examples](examples).
+
+[documentation]: https://villainsrule4000.github.io/trtl
+[examples]: null

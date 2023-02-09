@@ -66,7 +66,7 @@ export class TurtleUtils {
 	 * @see {@link http://socket.io SocketIO Documentation} for more information about SocketIO.
 	 * @see {@link https://trtl.acaiberii.win/docs/ Trtl Documentation} for more information about Trtl.
 	 */
-	constructor(instance: string = "v2.blacket.org") {
+	constructor(instance: string = "blacket.org") {
 		this.#instance = instance;
 	}
 
@@ -96,6 +96,19 @@ export class TurtleUtils {
 	}
 
 	/**
+	 * Verify your IP with Blacket's IP checking.
+	 * @returns {Promise} - An Axios request to the /verify endpoint.
+	 * @async
+	 * @see {@link http://axios-http.com Axios Documentation} for more information about Axios.
+	 */
+	async verify() {
+		return (await request.get(
+			"https://" + this.#instance + "/worker/verify",
+			{}
+		)).data;
+	}
+
+	/**
 	 * Log into a user's account by the username and password, and return the Session ID.
 	 * @param {string} username - The user's username.
 	 * @param {string} password - The user's password.
@@ -106,7 +119,7 @@ export class TurtleUtils {
 		var cook;
 		try {
 			var resp = await request.post(
-				"https://v2.blacket.org/worker/login", {
+				"https://blacket.org/worker/login", {
 					username: username,
 					password: password,
 				}, {
@@ -117,7 +130,7 @@ export class TurtleUtils {
 			);
 			cook = resp.headers
 				.get("set-cookie")[0]
-				.split("; ")[0]
+				.split(";")[0]
 				.replace("connect.sid=", "");
 		} catch (e) {
 			throw new Error("Failed to login.");
